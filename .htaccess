@@ -1,0 +1,60 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule strona-glowna index.html
+RewriteRule kontakt kontakt.html
+RewriteRule gry-wedlug-pc gry-wdg-spc.html
+RewriteRule wszystkie-najlepsze-gry listagier.html
+RewriteRule platformy-do-pobierania-gier listaplatform.html
+RewriteRule gry-na-mocny-pc mocny-pc.html
+RewriteRule gry-na-slaby-pc slaby-pc.html
+RewriteRule	gry-na-sredni-pc sredni-pc.html
+
+RewriteRule gry-akcji podstrony/akcja/home-page.html
+RewriteRule	gra-crysis-2 podstrony/akcja/crysis.html
+RewriteRule gra-dying-light podstrony/akcja/dying-light.html
+RewriteRule gra-far-cry-3 podstrony/akcja/far-cry.html
+RewriteRule gra-gta-v podstrony/akcja/gta.html
+RewriteRule gra-tom-clancy-reinbow-six-siedge podstrony/akcja/tom-clancy.html
+
+RewriteRule gra-battlefild-hardline podstrony/dodane/battlefild.html
+RewriteRule gra-call-of-duty podstrony/dodane/callof.html
+RewriteRule	gra-crysis-3 podstrony/dodane/crysis3.html
+RewriteRule	gra-cs-1.6 podstrony/dodane/cs.html
+RewriteRule	gra-enemy-front podstrony/dodane/enymy.html
+RewriteRule	gra-factorio podstrony/dodane/factorio.html
+RewriteRule	gra-mafia-2 podstrony/dodane/mafia.html
+RewriteRule	gra-sniper-elite-3 podstrony/dodane/sniper.html
+
+RewriteRule	gry-rpg podstrony/rpg/home-page.html
+RewriteRule	gra-darknest-dungeon podstrony/rpg/darkes.html 
+RewriteRule	gra-the-elder-scrolls-v podstrony/rpg/skyrim.html 
+RewriteRule	gra-stardew-valley podstrony/rpg/stardew.html
+RewriteRule	gra-wiedzmin-3 podstrony/rpg/wiedzmin.html
+RewriteRule	gra-fallout-3 podstrony/rpg/fallout.html
+
+RewriteRule	gry-samochodowe podstrony/samochodowe/home-page.html
+RewriteRule	gra-beam-ng-drive podstrony/samochodowe/beam.html
+RewriteRule	gra-the-crew podstrony/samochodowe/crew.html
+RewriteRule	gra-forza-horizon-3 podstrony/samochodowe/forza.html
+RewriteRule	gra-need-for-speed-most-wanted podstrony/samochodowe/need-for-speed.html
+RewriteRule	gra-wreckfest podstrony/samochodowe/wreck.html
+
+RewriteRule	gry-skradankowe podstrony/skradanki/home-page.html
+RewriteRule	gra-dishonored podstrony/skradanki/dishonored.html
+RewriteRule	gra-party-hard podstrony/skradanki/party-hard.html
+RewriteRule	gra-pay-day-2 podstrony/skradanki/pay-day-2.html
+RewriteRule	gra-shadow-tactics podstrony/skradanki/shadow-tatcic.html
+RewriteRule	gra-thief podstrony/skradanki/thief.html
+
+RewriteRule	gry-strategiczne podstrony/strategia/home-page.html
+RewriteRule	gra-europa-universalis-4 podstrony/strategia/europa.html
+RewriteRule	gra-crusader-kings-2 podstrony/strategia/crusader.html
+RewriteRule	gra-frostpunk podstrony/strategia/frostpunk.html
+RewriteRule	gra-ftl-faster-then-light podstrony/strategia/ftl.html
+RewriteRule	gra-northgard podstrony/strategia/northgards.html
+
