@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8" />
+		<title>Gry wg pc</title>
+		<meta name="descryption" content="Tu znajdziesz fajne gry według 3 przedziałuw wydajnośći pc."/>
+		<meta http-equiv="X-UA-Compatibyle" content=IE=edge,chrome=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+		<link rel="stylesheet" type="text/css" href="stylex.css">
+		<link rel="Shortcut icon" href="zajecia/ico.jpg"/>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript">
+var current = 0;
+var max = 5;
+var animation_speed = 300;
+var auto_scroll = true;
+var change_interval = 3000;
+
+var slides = [
+    '<a href=\"gra-battlefild-hardline\"><img src=\"zajecia/bettlefild.jpg\" style=\"height: 351px;\"></a>',
+    '<a href=\"gra-need-for-speed-most-wanted\"><img src=\"zajecia/needforspeed.jpg\"></a>',
+    '<a href=\"gra-enemy-front\"><img src=\"https://cdn2.gracza.pl/gfx/logos/980x360/980_158618088.jpg\"></a>',
+    '<a href=\"gra-mafia-2\"><img src=\"https://www.gry-online.pl/i/h/1/1040226859.jpg\"></a>',
+    '<a href=\"gra-ftl-faster-then-light\"><img src=\"https://wallscover.com/images/ftl-faster-than-light-wallpaper-12.jpg\"></a>'];
+
+function load(number) {
+    var slider = document.getElementById('slider');
+    $('#slider').fadeOut(animation_speed);
+
+    setTimeout(function(){
+        slider.innerHTML = slides[number-1];
+        $("#slider").fadeIn(animation_speed);
+    }, animation_speed);
+    return
+}
+
+function changeSlide(direction = 'auto') {
+    var next;
+
+    if (direction != 'auto') {
+        auto_scroll = false;
+    }
+
+    if (direction == 'next' || direction == 'auto') {
+        if (current == max) {
+            next = 1;
+        } else {
+            next = current + 1;
+        }
+    } else {
+        if (current == 1) {
+            next = max;
+        } else {
+            next = current - 1;
+        }
+    }
+
+    load(next);
+    current = next;
+
+    return;
+}
+
+setInterval(function() {
+    if (auto_scroll) {
+        changeSlide();
+    }
+}, change_interval);
+		</script>
+</head>
+</head>
+
+<body onload="zminslajd()">
+	<div class="wraper">
+		<div class="title-graphic">		
+				<div class="overlay">
+					<h1 class="nazwapodstrony" style="position: absolute; left: 25px">
+						<span class="border2" style="color:red;">Gry</span><span class="border2"> Według Wydajności PC</span>
+					</h1>
+
+					<div class="menu2" style="position: absolute; left: 10px; top: -4px;">
+							<div class="section2">
+								<a href="index.html" class="title-menu2" style="color: black">	
+									<div class="title">	Strona główna</div>
+								</a>	
+							</div>
+				
+							<div class="section2" style="border-radius: 0px 10px 10px 0px">
+								<a href="listagier.html" class="title-menu2" style="color: black;">
+									<div class="title">Top 5 gier</div>
+								</a>
+							</div>
+					</div>
+
+					<div>
+						<img class="tapetagura" src="zajecia/ogromna-kolekcja_1763g.png"> 
+					</div>
+				</div>
+		</div>
+		<div class="menu2">
+			<div class="section" style="width:333px">
+				<div class="title">
+					<a href="slaby-pc.html" style="color: black;" class="titlehovercolor">Gry na słabego pc</a>
+				</div>
+				<div class="link" style="width: 333px">
+					<a href="podstrony/dodane/cs.html" class="section-link">CS: 1.6</a>
+					<a href="podstrony/skradanki/party-hard.html" class="section-link">Party Hard</a>
+					<a href="podstrony/dodane/callof.html" class="section-link">Call of Duty</a>
+					<a href="podstrony/strategia/ftl.html" class="section-link">FTL: Faster Than Light</a>
+					<a href="podstrony/samochodowe/need-for-speed.html" class="section-link">Need for Speed: Most Wanted</a>
+				</div>
+			</div>	
+
+			<div class="section" style="width: 333px">
+				<div class="title">
+					<a href="sredni-pc.html" style="color: black" class="titlehovercolor">Gry na średniego pc</a>
+				</div>
+				<div class="link" style="width: 333px">
+				 	<a href="podstrony/dodane/mafia.html" class="section-link">Mafia 2</a>
+				 	<a href="podstrony/dodane/factorio.html" class="section-link">Factorio</a>
+				 	<a href="podstrony/dodane/enymy.html" class="section-link">Enemy Front</a>
+				 	<a href="podstrony/dodane/sniper.html" class="section-link">Sniper Elite 3</a>
+				 	<a href="podstrony/rpg/skyrim.html" class="section-link">The Elder Scrolls V: Skyrim</a>
+				</div>
+			</div>
+
+			<div class="section" style="width:333px">
+				<div class="title">
+					<a href="mocny-pc.html" style="color: black" class="titlehovercolor">Gry na mocnego pc</a>
+				</div>
+				<div class="link" style="width: 333px">
+					<a href="podstrony/dodane/crysis3.html" class="section-link">Crysis 3</a>
+					<a href="podstrony/akcja/dying-light.html" class="section-link">Dying Light</a>
+					<a href="podstrony/akcja/gta.html" class="section-link">Grand Theft Auto V</a>
+					<a href="podstrony/dodane/battlefild.html" class="section-link">Battlefield Hardline</a>
+					<a href="podstrony/akcja/tom-clancy.html" class="section-link">Tom Clancy's Rainbow Six: Siege</a>
+				</div>
+			</div>
+		<div id="slider-back">
+			<div id="slajdy">
+				<div id="slider">
+					<a href="gra-ftl-faster-then-light"><img src="https://wallscover.com/images/ftl-faster-than-light-wallpaper-12.jpg"></a>
+				</div>
+			
+				<div id="nxslajd" onclick="changeSlide('next')">
+					<i class="fas fa-angle-right"></i>
+				</div>
+			
+				<div id="prslajd" onclick="changeSlide('previous')">
+					<i class="fas fa-angle-left"></i>
+				</div>
+			</div>
+		</div>	
+
+		<div class="lista-gier" style="height: 1420px;">
+
+				<div class="lista-gier-1" style="border-bottom: 2px solid gray;">		
+					<h1 class="border2" >
+						<a href="podstrony/dodane/callof.html" style="color: green;">Call of Duty</a>
+					</h1>
+
+						<br>
+					<img  class="zdj-1" src="zajecia/callof.jpg">
+
+						<div class="text-left-img" style="float: right;">
+							Call of Duty to jedna z pierwszych gier tego typu, za sprawą której gracz otrzymuje możliwość spojrzenia na największy konflikt zbrojny XX wieku z kilku różnych perspektyw. Wcielając się w rolę amerykańskiego spadochroniarza, brytyjskiego komandosa lub rosyjskiego piechura ma okazję poczuć klimat tego okresu historycznego - brać udział w wielu ekscytujących bitwach, wykonywać ekstremalnie niebezpieczne zadania specjalne, itp.
+						</div>
+							<div style="clear: both;"></div>
+				</div>	
+
+				<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+					<h1 class="border2">
+						<a href="podstrony/skradanki/party-hard.html" style="color: green;">Party Hard</a>
+					</h1>
+
+						<br>
+						<img  class="zdj-1"  src="zajecia/party.jpg">
+						<div class="text-left-img" style="float: right;">
+							Wcielamy się w człowieka, który, poirytowany notorycznymi imprezami i zakłócaniem ciszy nocnej przez swoich sąsiadów, postanawia uporać się z problemem w dość drastyczny sposób. Zamiast kolejny raz wzywać policję, protagonista zamierza dostać się na imprezę i wymordować wszystkich jej uczestników.
+						</div>
+						<div style="clear: both;"></div>
+					</div>	
+
+				<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+					<h1 class="border2" style="color: red">
+						<a href="podstrony/dodane/sniper.html" style="color: blue;">Sniper Elite 3</a>
+					</h1>
+
+						<br>
+						<img  class="zdj-1"  src="zajecia/sniper.jpg">
+						<div class="text-left-img" style="float: right;">
+							Akcja ponownie osadzona jest w realiach II wojny światowej. Tym razem jednak autorzy porzucili lokacje europejskie i zamiast tego osadzili kampanię na terenach Afryki. Zmianie nie uległa natomiast postać głównego bohatera. Ponownie jest nim Karl Fishburne, czyli strzelec wyborowy pracujący dla dowództwa amerykańskich sił zbrojnych. 
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+
+				<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+					<h1 class="border2" style="color: red">
+						<a href="podstrony/dodane/factorio.html" style="color: blue;">Factorio</a>
+					</h1>
+
+						<br>
+						<img  class="zdj-1"  src="zajecia/factorio.jpg">
+						<div class="text-left-img" style="float: right;">
+							Factorio to niezależna strategia ekonomiczna, w której zajmujemy się budowaniem fabryk i ich zarządzaniem. Musimy więc troszczyć się o surowce niezbędne do stawiania kolejnych budowli, a także dbać o optymalizację ciągów produkcyjnych, m.in. przez wprowadzenie nowych technologii, wynajdowanych w centrach badawczych czy stałe usprawnianie metod dostarczania towarów do miejsca ich przetwarzania. 
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+
+				<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+					<h1 class="border2" style="color: red">
+						<a href="podstrony/dodane/crysis3.html">Crysis 3</a>
+					</h1>
+
+						<br>
+						<img  class="zdj-1"  src="zajecia/crysis3.jpg">
+						<div class="text-left-img" style="float: right;">
+							Crysis 3 to trzecia odsłona serii futurystycznych strzelanek, w których gracz przywdziewa zaawansowany technologicznie nanokombinezon. W trzeciej odsłonie serii Crysis przenosimy się do roku 2047 i wcielamy w posiadacza nanokombinezonu Proroka, który staje do walki z obcą rasą Ceph oraz korporacją Cell. 
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+
+				<div class="lista-gier-1">
+					<h1 class="border2" style="color: red">
+						<a href="podstrony/akcja/dying-light.html">Dying Light</a>
+					</h1>
+
+						<br>
+						<img  class="zdj-1"  src="zajecia/dyinglight.jpg">
+						<div class="text-left-img" style="float: right;">
+							Dying Light to gra akcji z otwartym światem, utrzymana w klimatach survival horroru. Wcielamy się w niejakiego Kyle’a Crane’a, trafiając do miasta Harran, wzorowanego na Rio de Janeiro, pełnym charakterystycznych faweli. Ludność metropolii została zainfekowana tajemniczym wirusem, który błyskawicznie zmienił wszystkich w zombie. 
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+		</div>
+
+		<div class=foter style="width: 997px; margin-top: 0px;">
+			Poznaj najlepasze gry według mnie na pc. Wszystkie prawa zastrzeżone &copy;
+		</div>
+		
+	</div>
+</body>
+
+</html>

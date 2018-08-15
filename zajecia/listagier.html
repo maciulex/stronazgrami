@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> tajna stronka </title>
+	<meta charset="utf-8" />
+	<title>Stronka o grach <;</title>
+	<meta name="descryption" content="fajna tajna stronka"/>
+	<meta http-equiv="X-UA-Compatibyle" content=IE=edge,chrome=1" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="stylex.css">
+	<link rel="Shortcut icon" href="zajecia/ico.jpg"/>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+var current = 0;
+var max = 5;
+var animation_speed = 300;
+var auto_scroll = true;
+var change_interval = 3000;
+
+var slides = [
+    '<a href="gra-wiedzmin-3"><img src="https://d.allegroimg.com/s1440/038f7c/825719874b6d9c977fbcb797d02d" style="height: 351px;"></a>',
+    '<a href="gra-northgard"><img src="zajecia/northgard.jpg"></a>',
+    '<a href="gra-far-cry-3"><img src="zajecia/farcry.jpg"></a>',
+    '<a href="gra-thief"><img src="zajecia/thief.jpg"></a>',
+    '<a href="gra-tom-clancy-reinbow-six-siedge"><img src="https://i.wpimg.pl/O/644x362/d.wpimg.pl/1265528750-513013368/rainbow-six-siege-ubisoft.jpg"></a>'];
+
+function load(number) {
+    var slider = document.getElementById('slider');
+    $('#slider').fadeOut(animation_speed);
+
+    setTimeout(function(){
+        slider.innerHTML = slides[number-1];
+        $("#slider").fadeIn(animation_speed);
+    }, animation_speed);
+    return
+}
+
+function changeSlide(direction = 'auto') {
+    var next;
+
+    if (direction != 'auto') {
+        auto_scroll = false;
+    }
+
+    if (direction == 'next' || direction == 'auto') {
+        if (current == max) {
+            next = 1;
+        } else {
+            next = current + 1;
+        }
+    } else {
+        if (current == 1) {
+            next = max;
+        } else {
+            next = current - 1;
+        }
+    }
+
+    load(next);
+    current = next;
+
+    return;
+}
+
+setInterval(function() {
+    if (auto_scroll) {
+        changeSlide();
+    }
+}, change_interval);
+</script>
+</head>
+<body onload="zminslajd()">
+	<div class="wraper">
+
+			<div class="title-graphic">		
+				<div class="overlay">
+					<h1 class="nazwapodstrony">
+						<span class="border2" style="color:red; ">Top</span><span class="border2"> 5 gier.</span>
+					</h1>
+
+					<div class="menu2" style="position: absolute; left: 10px; top: -4px;">
+						<div class="section2">
+							<a href="index.html" class="title-menu2" style="color: black">	
+								<div class="title">	Strona główna</div>
+							</a>	
+						</div>
+				
+						<div class="section2" style="border-radius: 0px 10px 10px 0px">
+							<a href="gry-wdg-spc.html" class="title-menu2" style="color: black">
+								<div class="title">Gry wg. wydajnośći pc</div>
+							</a>
+						</div>
+					</div>
+
+					<div>
+						<img class="tapetagura" src="zajecia/ogromna-kolekcja_1763g.png"> 
+					</div>
+				</div>
+			</div>
+
+			<div class="menu2">
+
+				<div class="section">
+					<div class="title">
+						<a href="podstrony/akcja/home-page.html" class="title-menu2" style="">Akcji</a>
+					</div>
+
+						<div class="link">
+							<a href="podstrony/akcja/crysis.html" class="section-link">Crysis 2</a>
+							<a href="podstrony/akcja/far-cry.html" class="section-link">Far Cry 3</a>
+							<a href="podstrony/akcja/dying-light.html" class="section-link">Dying Light</a>
+							<a href="podstrony/akcja/gta.html" class="section-link">Grand Theft Auto V</a>
+							<a href="podstrony/akcja/tom-clancy.html" class="section-link">Tom Clancy's Rainbow Six: Siege</a>
+						</div>
+				</div>		
+
+				<div class="section">
+					<div class="title">
+						<a href="podstrony/rpg/home-page.html" class="title-menu2">Rpg</a>
+					</div>
+
+						<div class="link">
+							<a href="podstrony/rpg/fallout.html" class="section-link">Fallout 3</a>
+							<a href="podstrony/rpg/stardew.html" class="section-link">Stardew Valley</a>
+							<a href="podstrony/rpg/darkes.html" class="section-link">Darkest Dungeon</a>
+							<a href="podstrony/rpg/wiedzmin.html" class="section-link">Wiedźmin 3:<br> Dziki Gon</a>
+							<a href="podstrony/rpg/skyrim.html" class="section-link">The Elder Scrolls V: Skyrim</a>
+						</div>
+				</div>	
+				
+				<div class="section">
+					<div class="title">
+						<a href="podstrony/strategia/home-page.html" class="title-menu2">Strategiczne</a>
+					</div>
+
+						<div class="link">
+							<a href="podstrony/strategia/frostpunk.html" class="section-link">Frostpunk</a>
+							<a href="podstrony/strategia/northgards.html" class="section-link">Northgard</a>
+							<a href="podstrony/strategia/europa.html" class="section-link">Europa Universalis IV</a>
+							<a href="podstrony/strategia/ftl.html" class="section-link">FTL:<br> Faster Then light</a>
+							<a href="podstrony/strategia/crusader.html" class="section-link">Crusader Kings II: Mroczne Wieki</a>
+						</div>
+				</div>	
+
+				<div class="section">
+					<div class="title">
+						<a href="podstrony/samochodowe/home-page.html" class="title-menu2">Samochodowe</a>
+					</div>
+
+						<div class="link">
+							<a href="podstrony/samochodowe/crew.html" class="section-link">The Crew</a>
+							<a href="podstrony/samochodowe/wreck.html" class="section-link">Wreckfest</a>
+							<a href="podstrony/samochodowe/beam.html" class="section-link">BeamNG.drive</a>
+							<a href="podstrony/samochodowe/forza.html" class="section-link">Forza Horizon 3</a>
+							<a href="podstrony/samochodowe/need-for-speed.html" class="section-link">Need For Speed:<BR> Most Wanted</a>
+						</div>
+				</div>	
+
+				<div class="section">
+					<div class=title>
+						<a href="podstrony/skradanki/home-page.html" class="title-menu2">Skradanki</a>
+					</div>
+
+						<div class="link">
+							<a href="podstrony/skradanki/thief.html" class="section-link">Thief</a>
+							<a href="podstrony/skradanki/pay-day-2.html" class="section-link">Pay Day 2</a>
+							<a href="podstrony/skradanki/party-hard.html" class="section-link">Party Hard</a>
+							<a href="podstrony/skradanki/dishonored.html" class="section-link">Dishonored</a>
+							<a href="podstrony/skradanki/shadow-tatcic.html" class="section-link">Shadow Tactics:<br>Blades of the Shogun</a>
+						</div>
+
+				</div>
+			</div>
+			<div id="slider-back">
+				<div id="slajdy">
+					<div id="slider">
+						<a href="gra-tom-clancy-reinbow-six-siedge"><img src="https://i.wpimg.pl/O/644x362/d.wpimg.pl/1265528750-513013368/rainbow-six-siege-ubisoft.jpg"></a>;
+					</div>
+				
+					<div id="nxslajd" onclick="changeSlide('next')">
+						<i class="fas fa-angle-right"></i>
+					</div>
+				
+					<div id="prslajd" onclick="changeSlide('previous')">
+						<i class="fas fa-angle-left"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lista-gier" style="padding-bottom: 0px;">
+
+					<div class="lista-gier-1" style="border-bottom: 2px solid gray;">		
+						<h1 class="border2">
+							<a href="podstrony/akcja/crysis.html">Crysis 2</a>
+						</h1>
+
+							<br>
+						<img  class="zdj-1" src="zajecia/crysis2-logo.jpg">
+
+							<div class="text-left-img" style="float: right;">
+								Crysis 2 to pierwszoosobowa strzelanina, w której ponownie przywdziewamy dający nadludzkie możliwości nanokombinezon, by stanąć przeciwko hordom obcych najeźdźców. Stawką w tym starciu jest przyszłość naszej planety. planety. Akcja gry zaczyna się trzy lata po wydarzeniach, których świadkami byliśmy w pierwszej części. Przez ten czas obcy zadbali, by znaczna część naszej planety przeobraziła się w pole bitewne. </div>
+							<div style="clear: both;"></div>
+					</div>	
+
+					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+						<h1 class="border2" style="color: red">
+							<a href="podstrony/rpg/skyrim.html">The Elder Scrolls V: Skyrim</a>
+						</h1>
+
+							<br>
+							<img  class="zdj-1"  src="zajecia/sky-rim.jpg">
+							<div class="text-left-img" style="float: right;">
+								The Elder Scrolls V: Skyrim to kolejna część serii cRPG autorstwa zespołu Bethesda Softworks. Ponownie odwiedzamy w niej kontynent Tamriel, a fabuła tym razem obraca się wokół powrotu do tej krainy pradawnej rasy smoków. Akcja toczy się 200 lat po wydarzeniach opowiedzianych w grze Oblivion. Gracze wcielają się w jednego z ostatnich bohaterów parających się profesją dovahkiina, czyli łowcy smoków. </div>
+							<div style="clear: both;"></div>
+					</div>	
+
+					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+						<h1 class="border2" style="color: red">
+							<a href="podstrony/strategia/europa.html">	Europa Universalis IV </a>
+						</h1>
+
+							<br>
+							<img  class="zdj-1"  src="zajecia/europa.jpg">
+							<div class="text-left-img" style="float: right;">
+								Wzorem wcześniejszych odsłon cyklu, w Europa Universalis IV gracz wciela się w rolę szarej eminencji, która kieruje rozwojem wybranego kraju na przestrzeni wieków. Tym razem do wyboru jest ponad 250 nacji zamieszkujących praktycznie cały glob. Zależnie od scenariusza długość historycznego okresu gry może wynosić nawet blisko 400 lat (w kampanii głównej).</div>
+							<div style="clear: both;"></div>
+					</div>
+
+					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
+						<h1 class="border2" style="color: red">
+							<a href="podstrony/samochodowe/beam.html">	BeamNG.drive</a>
+						</h1>
+
+							<br>
+							<img  class="zdj-1"  src="zajecia/beamng.jpg">
+							<div class="text-left-img" style="float: right;">
+								Dlatego BeamNG.drive oferuje sandboksowy model rozgrywki, w którym swobodnie przemierzamy zróżnicowane lokacje o otwartej strukturze, oddając się przyjemności płynącej z jazdy i eksploracji. Robimy to za kierownicą jednego ze stosunkowo pokaźnej puli pojazdów, w pełni podatnych na uszkodzenia i szeroki zakres modyfikacji.
+							</div>
+							<div style="clear: both;"></div>
+					</div>
+
+					<div class="lista-gier-1">
+						<h1 class="border2" style="color: red">
+							<a href="podstrony/skradanki/dishonored.html">	Dishonored</a>
+						</h1>
+
+							<br>
+							<img  class="zdj-1"  src="zajecia/dishonored.jpg">
+							<div class="text-left-img" style="float: right;">
+								W Dishonored gracz wciela się w postać Corvo Attano, legendarnego Lorda Protektora cesarzowej Jessamine Kaldwin, zamordowanej w zamachu stanu uknutym przez ambitnego Hirama Burrowsa, Lorda Regenta. Fikcyjne miasto Dunwall, które zwiedzamy w czasie przygód, czerpie z estetyki steampunka i epoki wiktoriańskiej.</div>
+							<div style="clear: both;"></div>
+					</div>
+			</div>
+	</div>
+</body>
+</html>
