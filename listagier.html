@@ -9,67 +9,64 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 	<link rel="stylesheet" type="text/css" href="stylex.css">
 	<link rel="Shortcut icon" href="zajecia/ico.jpg"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
-var current = 0;
-var max = 5;
-var animation_speed = 300;
-var auto_scroll = true;
-var change_interval = 3000;
+var numer = 1//Math.floor(Math.random()*5)+1
+var timer1 = 0;
+var timer2 = 0;
+var przleoczslajdnumer;
 
-var slides = [
-    '<a href="gra-wiedzmin-3"><img src="https://d.allegroimg.com/s1440/038f7c/825719874b6d9c977fbcb797d02d" style="height: 351px;"></a>',
-    '<a href="gra-northgard"><img src="zajecia/northgard.jpg"></a>',
-    '<a href="gra-far-cry-3"><img src="zajecia/farcry.jpg"></a>',
-    '<a href="gra-thief"><img src="zajecia/thief.jpg"></a>',
-    '<a href="gra-tom-clancy-reinbow-six-siedge"><img src="https://i.wpimg.pl/O/644x362/d.wpimg.pl/1265528750-513013368/rainbow-six-siege-ubisoft.jpg"></a>'];
-
-function load(number) {
-    var slider = document.getElementById('slider');
-    $('#slider').fadeOut(animation_speed);
-
-    setTimeout(function(){
-        slider.innerHTML = slides[number-1];
-        $("#slider").fadeIn(animation_speed);
-    }, animation_speed);
-    return
+function przeloczslajd(przleoczslajdnumer)
+{
+	clearTimeout(timer1);
+	clearTimeout(timer2);
+	if (przleoczslajdnumer == 1) {numer = numer - 1 + 1}
+	else if (przleoczslajdnumer == 2) {numer = numer - 2}
+	schowaj();
+    setTimeout("zminslajd()", 300);
 }
 
-function changeSlide(direction = 'auto') {
-    var next;
-
-    if (direction != 'auto') {
-        auto_scroll = false;
-    }
-
-    if (direction == 'next' || direction == 'auto') {
-        if (current == max) {
-            next = 1;
-        } else {
-            next = current + 1;
-        }
-    } else {
-        if (current == 1) {
-            next = max;
-        } else {
-            next = current - 1;
-        }
-    }
-
-    load(next);
-    current = next;
-
-    return;
+function schowaj()
+{
+	$("#slider").fadeOut(300);
 }
 
-setInterval(function() {
-    if (auto_scroll) {
-        changeSlide();
-    }
-}, change_interval);
+function zminslajd()
+{
+	numer++; if (numer>5) {numer=1};
+	if (numer<=0) {numer=5};
+	switch (numer) 
+	{
+		case 1:
+		document.getElementById("slider").innerHTML = 
+		"<a href=\"gra-wiedzmin-3\"><img src=\"https://d.allegroimg.com/s1440/038f7c/825719874b6d9c977fbcb797d02d\" style=\"height: 351px;\"></a>";
+		break;
+		case 2:
+
+		document.getElementById("slider").innerHTML = 
+		"<a href=\"gra-northgard\"><img src=\"zajecia/northgard.jpg\"></a>";
+		break;
+		case 3:
+		document.getElementById("slider").innerHTML = 
+		"<a href=\"gra-far-cry-3\"><img src=\"zajecia/farcry.jpg\"></a>";
+		break;
+		case 4:
+		document.getElementById("slider").innerHTML = 
+		"<a href=\"gra-thief\"><img src=\"zajecia/thief.jpg\"></a>";
+		break;
+		case 5:
+		document.getElementById("slider").innerHTML = 
+		"<a href=\"gra-tom-clancy-reinbow-six-siedge\"><img src=\"https://i.wpimg.pl/O/644x362/d.wpimg.pl/1265528750-513013368/rainbow-six-siege-ubisoft.jpg\"></a>";
+		break;
+	}
+	$("#slider").fadeIn(300);
+	timer1 = setTimeout("zminslajd()",5000);
+	timer2 = setTimeout("schowaj()",4700);
+
+}
 </script>
 </head>
-<body>
+<body onload="zminslajd()">
 	<div class="wraper">
 
 			<div class="title-graphic">		
@@ -80,13 +77,13 @@ setInterval(function() {
 
 					<div class="menu2" style="position: absolute; left: 10px; top: -4px;">
 						<div class="section2">
-							<a href="index.html" class="title-menu2" style="color: black">	
+							<a href="strona-glowna" class="title-menu2" style="color: black">	
 								<div class="title">	Strona główna</div>
 							</a>	
 						</div>
 				
 						<div class="section2" style="border-radius: 0px 10px 10px 0px">
-							<a href="gry-wdg-spc.html" class="title-menu2" style="color: black">
+							<a href="gry-wedlug-pc" class="title-menu2" style="color: black">
 								<div class="title">Gry wg. wydajnośći pc</div>
 							</a>
 						</div>
@@ -102,97 +99,94 @@ setInterval(function() {
 
 				<div class="section">
 					<div class="title">
-						<a href="podstrony/akcja/home-page.html" class="title-menu2" style="">Akcji</a>
+						<a href="gry-akcji" class="title-menu2" style="">Akcji</a>
 					</div>
 
 						<div class="link">
-							<a href="podstrony/akcja/crysis.html" class="section-link">Crysis 2</a>
-							<a href="podstrony/akcja/far-cry.html" class="section-link">Far Cry 3</a>
-							<a href="podstrony/akcja/dying-light.html" class="section-link">Dying Light</a>
-							<a href="podstrony/akcja/gta.html" class="section-link">Grand Theft Auto V</a>
-							<a href="podstrony/akcja/tom-clancy.html" class="section-link">Tom Clancy's Rainbow Six: Siege</a>
+							<a href="gra-crysis-2" class="section-link">Crysis 2</a>
+							<a href="gra-far-cry-3" class="section-link">Far Cry 3</a>
+							<a href="gra-dying-light" class="section-link">Dying Light</a>
+							<a href="gra-gta-v" class="section-link">Grand Theft Auto V</a>
+							<a href="gra-tom-clancy-reinbow-six-siedge" class="section-link">Tom Clancy's Rainbow Six: Siege</a>
 						</div>
 				</div>		
 
 				<div class="section">
 					<div class="title">
-						<a href="podstrony/rpg/home-page.html" class="title-menu2">Rpg</a>
+						<a href="gry-rpg" class="title-menu2">Rpg</a>
 					</div>
 
 						<div class="link">
-							<a href="podstrony/rpg/fallout.html" class="section-link">Fallout 3</a>
-							<a href="podstrony/rpg/stardew.html" class="section-link">Stardew Valley</a>
-							<a href="podstrony/rpg/darkes.html" class="section-link">Darkest Dungeon</a>
-							<a href="podstrony/rpg/wiedzmin.html" class="section-link">Wiedźmin 3:<br> Dziki Gon</a>
-							<a href="podstrony/rpg/skyrim.html" class="section-link">The Elder Scrolls V: Skyrim</a>
+							<a href="gra-fallout-3" class="section-link">Fallout 3</a>
+							<a href="gra-stardew-valley" class="section-link">Stardew Valley</a>
+							<a href="gra-darknest-dungeon" class="section-link">Darkest Dungeon</a>
+							<a href="gra-wiedzmin-3" class="section-link">Wiedźmin 3:<br> Dziki Gon</a>
+							<a href="gra-the-elder-scrolls-v" class="section-link">The Elder Scrolls V: Skyrim</a>
 						</div>
 				</div>	
 				
 				<div class="section">
 					<div class="title">
-						<a href="podstrony/strategia/home-page.html" class="title-menu2">Strategiczne</a>
+						<a href="gry-strategiczne" class="title-menu2">Strategiczne</a>
 					</div>
 
 						<div class="link">
-							<a href="podstrony/strategia/frostpunk.html" class="section-link">Frostpunk</a>
-							<a href="podstrony/strategia/northgards.html" class="section-link">Northgard</a>
-							<a href="podstrony/strategia/europa.html" class="section-link">Europa Universalis IV</a>
-							<a href="podstrony/strategia/ftl.html" class="section-link">FTL:<br> Faster Then light</a>
-							<a href="podstrony/strategia/crusader.html" class="section-link">Crusader Kings II: Mroczne Wieki</a>
+							<a href="gra-frostpunk" class="section-link">Frostpunk</a>
+							<a href="gra-northgard" class="section-link">Northgard</a>
+							<a href="gra-europa-universalis-4" class="section-link">Europa Universalis IV</a>
+							<a href="gra-ftl-faster-then-light" class="section-link">FTL:<br> Faster Then light</a>
+							<a href="gra-crusader-kings-2" class="section-link">Crusader Kings II: Mroczne Wieki</a>
 						</div>
 				</div>	
 
 				<div class="section">
 					<div class="title">
-						<a href="podstrony/samochodowe/home-page.html" class="title-menu2">Samochodowe</a>
+						<a href="gry-samochodowe" class="title-menu2">Samochodowe</a>
 					</div>
 
 						<div class="link">
-							<a href="podstrony/samochodowe/crew.html" class="section-link">The Crew</a>
-							<a href="podstrony/samochodowe/wreck.html" class="section-link">Wreckfest</a>
-							<a href="podstrony/samochodowe/beam.html" class="section-link">BeamNG.drive</a>
-							<a href="podstrony/samochodowe/forza.html" class="section-link">Forza Horizon 3</a>
-							<a href="podstrony/samochodowe/need-for-speed.html" class="section-link">Need For Speed:<BR> Most Wanted</a>
+							<a href="gra-the-crew" class="section-link">The Crew</a>
+							<a href="gra-wreckfest" class="section-link">Wreckfest</a>
+							<a href="gra-beam-ng-drive" class="section-link">BeamNG.drive</a>
+							<a href="gra-forza-horizon-3" class="section-link">Forza Horizon 3</a>
+							<a href="gra-need-for-speed-most-wanted" class="section-link">Need For Speed:<BR> Most Wanted</a>
 						</div>
 				</div>	
 
 				<div class="section">
 					<div class=title>
-						<a href="podstrony/skradanki/home-page.html" class="title-menu2">Skradanki</a>
+						<a href="gry-skradankowe" class="title-menu2">Skradanki</a>
 					</div>
 
 						<div class="link">
-							<a href="podstrony/skradanki/thief.html" class="section-link">Thief</a>
-							<a href="podstrony/skradanki/pay-day-2.html" class="section-link">Pay Day 2</a>
-							<a href="podstrony/skradanki/party-hard.html" class="section-link">Party Hard</a>
-							<a href="podstrony/skradanki/dishonored.html" class="section-link">Dishonored</a>
-							<a href="podstrony/skradanki/shadow-tatcic.html" class="section-link">Shadow Tactics:<br>Blades of the Shogun</a>
+							<a href="gra-thief" class="section-link">Thief</a>
+							<a href="gra-pay-day-2" class="section-link">Pay Day 2</a>
+							<a href="gra-party-hard" class="section-link">Party Hard</a>
+							<a href="gra-dishonored" class="section-link">Dishonored</a>
+							<a href="gra-shadow-tactics" class="section-link">Shadow Tactics:<br>Blades of the Shogun</a>
 						</div>
 
 				</div>
 			</div>
 			<div id="slider-back">
 				<div id="slajdy">
-					<div id="slider">
-						<a href="gra-tom-clancy-reinbow-six-siedge"><img src="https://i.wpimg.pl/O/644x362/d.wpimg.pl/1265528750-513013368/rainbow-six-siege-ubisoft.jpg"></a>;
-					</div>
-				
-					<div id="nxslajd" onclick="changeSlide('next')">
+					<div id="slider"></div>
+		
+					<div id="nxslajd" onclick="przeloczslajd(1)">
 						<i class="fas fa-angle-right"></i>
 					</div>
-				
-					<div id="prslajd" onclick="changeSlide('previous')">
+		
+					<div id="prslajd" onclick="przeloczslajd(2)">
 						<i class="fas fa-angle-left"></i>
 					</div>
 				</div>
 			</div>
 
-
 			<div class="lista-gier" style="padding-bottom: 0px;">
 
 					<div class="lista-gier-1" style="border-bottom: 2px solid gray;">		
 						<h1 class="border2">
-							<a href="podstrony/akcja/crysis.html">Crysis 2</a>
+							<a href="gra-crysis-2">Crysis 2</a>
 						</h1>
 
 							<br>
@@ -205,7 +199,7 @@ setInterval(function() {
 
 					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
 						<h1 class="border2" style="color: red">
-							<a href="podstrony/rpg/skyrim.html">The Elder Scrolls V: Skyrim</a>
+							<a href="gra-the-elder-scrolls-v">The Elder Scrolls V: Skyrim</a>
 						</h1>
 
 							<br>
@@ -217,7 +211,7 @@ setInterval(function() {
 
 					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
 						<h1 class="border2" style="color: red">
-							<a href="podstrony/strategia/europa.html">	Europa Universalis IV </a>
+							<a href="gra-europa-universalis-4">	Europa Universalis IV </a>
 						</h1>
 
 							<br>
@@ -229,7 +223,7 @@ setInterval(function() {
 
 					<div class="lista-gier-1" style="border-bottom: 2px solid gray">
 						<h1 class="border2" style="color: red">
-							<a href="podstrony/samochodowe/beam.html">	BeamNG.drive</a>
+							<a href="gra-beam-ng-drive">	BeamNG.drive</a>
 						</h1>
 
 							<br>
@@ -242,7 +236,7 @@ setInterval(function() {
 
 					<div class="lista-gier-1">
 						<h1 class="border2" style="color: red">
-							<a href="podstrony/skradanki/dishonored.html">	Dishonored</a>
+							<a href="gra-dishonored">	Dishonored</a>
 						</h1>
 
 							<br>
