@@ -622,6 +622,7 @@ margin-left: -8px;
 	position: relative;
 	left: 550px;
 	top: -200px;
+	opacity: 0.8;
 }
 
 #prslajd
@@ -634,6 +635,7 @@ margin-left: -8px;
 	position: relative;
 	left: 0px;
 	top: -250px;
+	opacity: 0.8;
 }
 
 #slajdy
