@@ -11,7 +11,7 @@ body
 
 .option
 {
-	min-width: 50px;
+	min-width: 60px;
 	height: 20px;
 	padding: 5px;
 	float:left; 	
@@ -684,8 +684,59 @@ margin-left: -8px;
 	margin-top: 48px;
 	margin-bottom: 10px;
 }
+.wraper1
+{
+	background-color: #404040;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+	margin-top: 15px;
+	font-size: 30px;
+	color: orange;
+	text-align: center;
+	padding: 3px;
+}
 
+.text
+{
+	font-size: 17px;
+	color: white;
+	padding: 10px;
+	text-align: justify;
+}
 
+.name-of-content
+{
+	color: orange;
+	font-size: 30px; 
+	position: relative; 
+}
+
+.menu-komunikatory
+{
+	background-color: #303030;
+	width: 311px;
+	height: 360px;
+	float: right;
+	margin: 8px;
+}
+
+.menu-komunikatory-text
+{
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+.img-komunikatory
+{
+	height: 450px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.8;
+	margin-top: 10px;
+}
 
 
 
