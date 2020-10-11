@@ -18,11 +18,11 @@
 
 <body>
 	<div id="cointeiner" style="height: 630px;">	
-		<div id="logo" style="padding: 7px;">
+		<div id="logo">
 		  Graczole
 		</div>
 
-		<div id="menu" style="height: 28px;">
+		<div id="menu">
 			<a id="menuborder" href="index.html">
 				<div class="option"> Strona Główna  </div>
 			<a/>
@@ -43,13 +43,16 @@
 				<div class="option"> Komunikatory </div>
 			</a>	
 
-			<a href="kontakt.html"> 
-				<div class="option" style="color: orange;"> Kontakt </div>
+			<a style="cursor: default;"> 
+				<div class="selected-option" style="color: orange;"> Kontakt </div>
 			</a>
+			<a href="gry.html"> 
+				<div class="option"> Moje gry </div>
+			</a>	
 			<div style="clear:both"></div>
 		</div>
 
-		<div id="topbar"> 
+		<div class="topbar"> 
 	
 			<table id="komputerek" style=" width: 100%; height: 80;">
 			 	<tr>
@@ -64,11 +67,11 @@
 			</table> 
 		</div>
 
-		<div id="sidebar" style="float: left">	
-			<img src="zajecia/obrazek.bmp" style="width: 100%; height: 100%;">
+		<div id="sidebar" style="float: left; height: 380px;">	
+			<img src="zajecia/obrazek.bmp" style="width: 105%; height: 381px;">
 		</div>
 
-		<div id="content2" style="float: right;">
+		<div id="content2" style="float: right; padding: 50px;">
 			<a href="https://plus.google.com/115427762035199189760" target="_blank" id="kontakt1" style="float: left;">
 				<div>
 					<i class="fab fa-google-plus-g" style="margin-top: 80px"></i>
